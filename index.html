@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#e85a78" />
+  <meta name="description" content="Moova Fresh Milk — susu segar 350 ml dengan rasa Murni, Strawberry, Coklat, Matcha, dan Lainnya. Pilih kadar gula, pesan via WhatsApp." />
+  <meta property="og:title" content="Moova Fresh Milk" />
+  <meta property="og:description" content="Fresh milk 350 ml. Pilih rasa, atur gula, bayar, lalu pesan via WhatsApp." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+  <link rel="apple-touch-icon" href="./__grok/icon-180.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" />
+  <link rel="stylesheet" href="./styles.css" />
+  <title>Moova Fresh Milk</title>
+</head>
+<body class="antialiased">
+  <main class="bg-cream text-ink">
+    <div class="pack-shell" id="home">
+      <div class="pack-inner stage" data-flavor="strawberry" id="hero-stage">
+        <header class="relative z-20 flex items-center justify-between gap-3 px-4 py-4 md:px-8 md:py-5">
+          <a href="#home" class="flex items-center gap-2">
+            <span class="grid size-9 place-items-center rounded-full bg-foam text-berry md:size-10"><svg viewBox="0 0 32 32" class="size-5" aria-hidden="true"><path d="M16 3c0 0-8 9.4-8 15.2a8 8 0 1 0 16 0C24 12.4 16 3 16 3z" fill="currentColor"/></svg></span>
+            <span class="font-display text-xl font-semibold tracking-tight md:text-2xl">moova</span>
+          </a>
+          <nav class="hidden items-center gap-7 font-display text-sm font-medium text-[var(--stage-muted)] lg:flex">
+            <a href="#home" class="transition-colors hover:text-[var(--stage-ink)]">Home</a>
+            <a href="#rasa" class="transition-colors hover:text-[var(--stage-ink)]">Flavors</a>
+            <a href="#tentang" class="transition-colors hover:text-[var(--stage-ink)]">About</a>
+            <a href="#pesan" class="transition-colors hover:text-[var(--stage-ink)]">Shop</a>
+            <a href="#ulasan" class="transition-colors hover:text-[var(--stage-ink)]">Reviews</a>
+          </nav>
+          <div class="flex items-center gap-2">
+            <a id="nav-wa" href="https://wa.me/6287825053557" target="_blank" rel="noreferrer" class="ghost-btn size-10" aria-label="Chat WhatsApp">
+              <svg viewBox="0 0 24 24" class="size-4" aria-hidden="true"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            </a>
+            <button type="button" id="nav-order" class="foam-btn hidden h-10 px-5 text-sm md:inline-flex">Order now</button>
+            <button type="button" id="nav-cart" class="ghost-btn relative size-10" aria-label="Buka keranjang">
+              <svg viewBox="0 0 24 24" class="size-4" aria-hidden="true"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z M3 6h18 M16 10a4 4 0 0 1-8 0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span id="cart-badge" hidden class="absolute -right-0.5 -top-0.5 grid min-w-4 place-items-center rounded-full bg-foam px-1 font-display text-xs font-semibold leading-4 text-ink">0</span>
+            </button>
+          </div>
+        </header>
+
+        <div class="ticker">
+          <div class="ticker-track py-2.5">
+            <div class="flex items-center">
+              <span class="flex items-center"><span class="px-4 opacity-80">Fresh milk</span><span class="opacity-40">•</span></span>
+              <span class="flex items-center"><span class="px-4 opacity-80">Tanpa pengawet</span><span class="opacity-40">•</span></span>
+              <span class="flex items-center"><span class="px-4 opacity-80">350 ml</span><span class="opacity-40">•</span></span>
+              <span class="flex items-center"><span class="px-4 opacity-80">3 pilihan gula</span><span class="opacity-40">•</span></span>
+              <span class="flex items-center"><span class="px-4 opacity-80">Request rasa ke CS</span><span class="opacity-40">•</span></span>
+              <span class="flex items-center"><span class="px-4 opacity-80">Antar dingin</span><span class="opacity-40">•</span></span>
+              <span class="flex items-center"><span class="px-4 opacity-80">Pesan sebelum jam 6</span><span class="opacity-40">•</span></span>
+            </div>
+            <div class="flex items-center">
+              <span class="flex items-center"><span class="px-4 opacity-80">Fresh milk</span><span class="opacity-40">•</span></span>
+              <span class="flex items-center"><span class="px-4 opacity-80">Tanpa pengawet</span><span class="opacity-40">•</span></span>
+              <span class="flex items-center"><span class="px-4 opacity-80">350 ml</span><span class="opacity-40">•</span></span>
+              <span class="flex items-center"><span class="px-4 opacity-80">3 pilihan gula</span><span class="opacity-40">•</span></span>
+              <span class="flex items-center"><span class="px-4 opacity-80">Request rasa ke CS</span><span class="opacity-40">•</span></span>
+              <span class="flex items-center"><span class="px-4 opacity-80">Antar dingin</span><span class="opacity-40">•</span></span>
+              <span class="flex items-center"><span class="px-4 opacity-80">Pesan sebelum jam 6</span><span class="opacity-40">•</span></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="relative grid items-center gap-6 px-4 pb-8 pt-4 md:px-8 lg:grid-cols-12 lg:gap-4 lg:pb-10 lg:pt-2">
+          <div class="z-10 order-2 space-y-5 lg:order-1 lg:col-span-3">
+            <article class="promo-card max-w-xs p-5">
+              <div class="mb-3 flex size-9 items-center justify-center rounded-full bg-berry text-foam"><span aria-hidden="true">🚚</span></div>
+              <p class="font-display text-lg font-semibold leading-tight">Free delivery ≤5 km</p>
+              <p class="mt-1 text-sm leading-relaxed text-ink-soft">Pesan sebelum jam 6 sore, antar hari ini. Dingin sampai depan pintu.</p>
+            </article>
+            <p class="hidden max-w-[16rem] text-sm leading-relaxed text-[var(--stage-muted)] lg:block">Bottled fresh milk — playful, cold, and made to sip now.</p>
+          </div>
+
+          <div class="relative order-1 flex min-h-80 items-center justify-center lg:order-2 lg:col-span-6 lg:min-h-[min(40rem,calc(100dvh-13rem))]">
+            <p class="wordmark absolute left-1/2 top-1/2 z-0 -translate-x-1/2 -translate-y-[58%]">moova</p>
+            <button type="button" id="hero-prev" class="ghost-btn absolute left-0 z-20 size-11 md:left-2" aria-label="Rasa sebelumnya">‹</button>
+            <div class="bottle-frame relative z-10"><img id="hero-image" src="./products/strawberry.jpg" alt="Botol Moova rasa Strawberry" class="bottle-photo rise-in" /></div>
+            <button type="button" id="hero-next" class="ghost-btn absolute right-0 z-20 size-11 md:right-2" aria-label="Rasa berikutnya">›</button>
+          </div>
+
+          <div class="z-10 order-3 space-y-5 lg:col-span-3 lg:justify-self-end lg:text-left">
+            <ul id="hero-flavors" class="flex gap-2 overflow-x-auto pb-1 lg:block lg:space-y-1.5 lg:overflow-visible"></ul>
+            <div>
+              <p id="hero-english" class="font-display text-xs uppercase tracking-[0.18em] text-[var(--stage-muted)]">Berry blush</p>
+              <h1 id="hero-name" class="mt-1 font-display text-3xl font-semibold leading-none md:text-4xl">Strawberry</h1>
+              <p id="hero-pitch" class="mt-2 max-w-xs text-sm leading-relaxed text-[var(--stage-muted)]">Pink, creamy, and a little bit flirty. Fresh milk folded with real strawberry.</p>
+            </div>
+            <label id="hero-custom-wrap" class="block" hidden>
+              <span class="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-[var(--stage-muted)]">Request ke CS</span>
+              <input id="hero-custom" class="field" placeholder="Contoh: vanilla, tarik, kurang manis" />
+              <p id="hero-hint" class="mt-1 text-xs text-foam" hidden></p>
+            </label>
+            <div class="flex flex-wrap items-center gap-2"><button id="hero-size" type="button" class="rounded-full bg-foam px-3 py-2 font-display text-sm text-ink" aria-pressed="true">350 ml</button></div>
+            <div>
+              <p class="mb-2 text-xs font-semibold uppercase tracking-[0.18em] text-[var(--stage-muted)]">Gula</p>
+              <div id="hero-sugar" class="sugar-picker"></div>
+            </div>
+            <div class="flex flex-wrap items-center gap-3">
+              <p id="hero-price" class="font-display text-3xl font-semibold tabular-nums">Rp 10.000</p>
+              <div class="stepper text-[var(--stage-ink)]">
+                <button type="button" id="hero-minus" class="grid size-9 place-items-center" aria-label="Kurangi">−</button>
+                <span id="hero-qty" class="min-w-6 text-center font-display tabular-nums">1</span>
+                <button type="button" id="hero-plus" class="grid size-9 place-items-center" aria-label="Tambah">+</button>
+              </div>
+            </div>
+            <button type="button" id="hero-order" class="foam-btn h-12 w-full px-6 text-base md:w-auto">Order now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section id="rasa" class="mx-auto max-w-6xl px-5 py-16 md:py-24">
+      <div class="mb-10 flex flex-wrap items-end justify-between gap-4">
+        <div><p class="font-display text-xs font-semibold uppercase tracking-[0.2em] text-berry">Flavors</p><h2 class="mt-2 font-display text-4xl font-semibold tracking-tight md:text-5xl">Pilih rasamu.</h2></div>
+        <p class="max-w-sm text-sm leading-relaxed text-ink-soft">Murni 7 ribu. Varian rasa 10 ribu. Semua tersedia 350 ml dengan pilihan gula.</p>
+      </div>
+      <div id="flavor-grid" class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3"></div>
+    </section>
+
+    <section id="tentang" class="bg-ink px-5 py-16 text-foam md:py-24">
+      <div class="mx-auto max-w-6xl">
+        <p class="font-display text-xs font-semibold uppercase tracking-[0.2em] text-berry">About</p>
+        <h2 class="mt-3 max-w-3xl font-display text-4xl font-semibold leading-[1.05] tracking-tight md:text-6xl">Fresh milk, bottled daily. Playful on purpose.</h2>
+        <p class="mt-5 max-w-xl text-base leading-relaxed text-foam/75">Moova adalah susu botolan untuk yang mau yang dingin, creamy, dan gampang dipesan. Empat rasa tetap — plus opsi Lainnya kalau kamu punya request sendiri ke CS.</p>
+        <div class="mt-12 grid gap-6 md:grid-cols-3">
+          <article class="rounded-[1.4rem] border border-foam/10 bg-foam/5 p-6"><h3 class="font-display text-2xl font-semibold">Susu segar</h3><p class="mt-2 text-sm leading-relaxed text-foam/70">Dipakai dingin, tanpa pengawet. Murni yang jujur, rasa yang berani.</p></article>
+          <article class="rounded-[1.4rem] border border-foam/10 bg-foam/5 p-6"><h3 class="font-display text-2xl font-semibold">350 ml</h3><p class="mt-2 text-sm leading-relaxed text-foam/70">Satu ukuran yang pas buat diminum sampai habis — pilih rasa, lalu atur kadar gula.</p></article>
+          <article class="rounded-[1.4rem] border border-foam/10 bg-foam/5 p-6"><h3 class="font-display text-2xl font-semibold">CS bisa request</h3><p class="mt-2 text-sm leading-relaxed text-foam/70">Vanilla, tarik, kurang manis, extra coklat. Tulis di Lainnya, kami bikinin.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="ulasan" class="mx-auto max-w-6xl px-5 py-16 md:py-24">
+      <p class="font-display text-xs font-semibold uppercase tracking-[0.2em] text-berry">Reviews</p>
+      <h2 class="mt-2 font-display text-4xl font-semibold tracking-tight md:text-5xl">Orang bilang, sip lagi.</h2>
+      <div class="mt-10 grid gap-4 md:grid-cols-2">
+        <figure class="rounded-[1.5rem] bg-foam p-6 shadow-[var(--shadow-card)]"><div class="mb-3 flex gap-1 text-berry">★★★★★</div><blockquote class="text-base leading-relaxed">Strawberry-nya berasa buah, bukan cuma wangi. Dingin sampai rumah.</blockquote><figcaption class="mt-4 font-display text-sm font-semibold">Dina A.<span class="ml-2 font-sans font-normal text-ink-soft">· Strawberry</span></figcaption></figure>
+        <figure class="rounded-[1.5rem] bg-foam p-6 shadow-[var(--shadow-card)]"><div class="mb-3 flex gap-1 text-berry">★★★★★</div><blockquote class="text-base leading-relaxed">Murni 350 ml buat sarapan — bersih, tidak amis, harga 7 ribu, enak buat sarapan.</blockquote><figcaption class="mt-4 font-display text-sm font-semibold">Raka P.<span class="ml-2 font-sans font-normal text-ink-soft">· Murni</span></figcaption></figure>
+        <figure class="rounded-[1.5rem] bg-foam p-6 shadow-[var(--shadow-card)]"><div class="mb-3 flex gap-1 text-berry">★★★★★</div><blockquote class="text-base leading-relaxed">Matcha-nya creamy, nggak pahit. Udah repeat order tiga kali minggu ini.</blockquote><figcaption class="mt-4 font-display text-sm font-semibold">Sari M.<span class="ml-2 font-sans font-normal text-ink-soft">· Matcha</span></figcaption></figure>
+        <figure class="rounded-[1.5rem] bg-foam p-6 shadow-[var(--shadow-card)]"><div class="mb-3 flex gap-1 text-berry">★★★★★</div><blockquote class="text-base leading-relaxed">Request coklat lebih pekat lewat WA, CS-nya langsung bikinin. Recommended.</blockquote><figcaption class="mt-4 font-display text-sm font-semibold">Bimo K.<span class="ml-2 font-sans font-normal text-ink-soft">· Lainnya</span></figcaption></figure>
+      </div>
+    </section>
+
+    <section id="pesan" class="bg-cream-deep/40 px-5 py-16 md:py-24">
+      <div class="mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-2">
+        <div>
+          <p class="font-display text-xs font-semibold uppercase tracking-[0.2em] text-berry">Shop</p>
+          <h2 class="mt-2 font-display text-4xl font-semibold tracking-tight md:text-5xl">Scan, transfer, chat.</h2>
+          <p class="mt-4 max-w-md text-base leading-relaxed text-ink-soft">Pesanan dikirim langsung ke WhatsApp Moova. Semua pesanan 350 ml; Murni Rp7.000 dan varian rasa Rp10.000. Atur gula saat memilih pesanan.</p>
+          <dl class="mt-8 space-y-4">
+            <div><dt class="text-xs font-semibold uppercase tracking-wider text-ink-soft">WhatsApp</dt><dd><a href="https://wa.me/6287825053557" target="_blank" rel="noreferrer" class="font-display text-2xl font-semibold text-ink underline decoration-berry/40 underline-offset-4">087825053557</a></dd></div>
+            <div><dt class="text-xs font-semibold uppercase tracking-wider text-ink-soft">Transfer BCA</dt><dd class="mt-1 flex flex-wrap items-center gap-3"><span class="font-display text-2xl font-semibold tabular-nums">4452309711</span><button id="copy-account" type="button" class="foam-btn h-9 bg-ink px-3 text-xs text-foam hover:bg-ink">Salin</button></dd><p id="copy-status" class="mt-1 text-sm text-ink-soft">Pemilik rekening: MO*** DAF*** FAK*** · Bank Central Asia</p></div>
+            <div><dt class="text-xs font-semibold uppercase tracking-wider text-ink-soft">Lokasi</dt><dd class="mt-1 text-sm leading-relaxed text-ink-soft">Jl. Tegalturi, depan Taman Budaya Giwangan, Yogyakarta</dd><a href="https://www.google.com/maps/search/?api=1&amp;query=Jl.%20Tegalturi%2C%20depan%20Taman%20Budaya%20Giwangan%2C%20Yogyakarta" target="_blank" rel="noreferrer" class="mt-2 inline-flex items-center gap-2 font-display text-sm font-semibold underline decoration-berry/40 underline-offset-4">📍 Buka Google Maps</a></div>
+          </dl>
+          <p class="mt-6 text-sm text-ink-soft">Ongkir: ≤5 km gratis · 5–8 km Rp5.000 · 8–12 km Rp10.000 · 12–15 km Rp15.000 · &gt;15 km konfirmasi.</p>
+          <button id="shop-order" type="button" class="foam-btn mt-8 h-12 bg-berry px-6 text-foam hover:bg-berry">Order now</button>
+        </div>
+        <figure class="overflow-hidden rounded-[1.8rem] bg-foam p-3 shadow-[var(--shadow-card)]"><img src="./qris.png" alt="QRIS Moova Fresh Milk — GoPay Merchant" class="w-full rounded-[1.3rem]" /><figcaption class="px-2 py-3 text-center text-sm text-ink-soft">QRIS nasional — GoPay, BCA, Mandiri, BNI, BRI, dan bank lainnya</figcaption></figure>
+      </div>
+    </section>
+
+    <footer class="bg-berry px-5 py-12 text-foam">
+      <div class="mx-auto flex max-w-6xl flex-col gap-8 md:flex-row md:items-end md:justify-between">
+        <div><p class="flex items-center gap-2 font-display text-3xl font-semibold"><span class="grid size-7 place-items-center">🥛</span>moova</p><p class="mt-2 text-sm text-foam/80">Fresh milk. Bottled to sip.</p><p class="mt-1 max-w-sm text-sm text-foam/70">350 ml · Murni Rp7.000 · varian rasa Rp10.000 · pilihan gula.</p></div>
+        <div class="space-y-1 text-sm"><a href="https://wa.me/6287825053557" target="_blank" rel="noreferrer" class="block underline-offset-4 hover:underline">WhatsApp 087825053557</a><p>BCA 4452309711</p><p>MO*** DAF*** FAK***</p><p class="max-w-sm text-foam/70">Jl. Tegalturi, depan Taman Budaya Giwangan, Yogyakarta</p><p class="text-foam/70">QRIS GoPay Merchant · Moova Fresh Milk</p><a class="mt-3 inline-block underline-offset-4 hover:underline" href="https://7tmtsk6z5d-ui.github.io/M-VA-BUSINESS-MANAGER/" target="_blank" rel="noreferrer">Buka MŌVA Business Manager</a></div>
+      </div>
+    </footer>
+
+    <a href="https://wa.me/6287825053557" target="_blank" rel="noreferrer" class="fixed bottom-5 right-5 z-40 grid size-14 place-items-center rounded-full bg-wa text-wa-ink shadow-[var(--shadow-float)] md:bottom-7 md:right-7" aria-label="Chat WhatsApp Moova">☘</a>
+  </main>
+
+  <div id="drawer-overlay" class="static-overlay" hidden></div>
+  <aside id="drawer" class="static-drawer" hidden role="dialog" aria-modal="true" aria-labelledby="drawer-title">
+    <div class="flex items-center justify-between px-5 py-4"><div><h2 id="drawer-title" class="font-display text-2xl font-semibold">Pesananmu</h2><p class="text-xs text-ink-soft">350 ml · pilih gula · bayar · kirim ke WhatsApp</p></div><button type="button" id="drawer-close" class="grid size-10 place-items-center rounded-full bg-cream-deep" aria-label="Tutup">×</button></div>
+    <div class="space-y-5 px-5 pb-8">
+      <div id="cart-empty" class="rounded-2xl bg-foam p-5 text-sm text-ink-soft">Keranjang masih kosong. Pilih rasa di halaman, lalu Order now.</div>
+      <ul id="cart-list" class="space-y-2"></ul>
+      <div class="space-y-1"><p class="flex items-center justify-between text-sm text-ink-soft"><span>Subtotal</span><span id="subtotal">Rp 0</span></p><p class="flex items-center justify-between text-sm text-ink-soft"><span>Delivery</span><span id="delivery-fee">Rp 0</span></p><p class="flex items-center justify-between font-display text-xl font-semibold"><span>Total</span><span id="grand-total">Rp 0</span></p></div>
+      <div class="space-y-3">
+        <input id="customer-name" class="field" placeholder="Nama" />
+        <input id="customer-phone" class="field" placeholder="Nomor WhatsApp" inputmode="tel" />
+        <textarea id="customer-address" class="field min-h-20 resize-y" placeholder="Alamat pengiriman"></textarea>
+        <div class="flex flex-wrap gap-2">
+          <button type="button" id="use-location" class="foam-btn h-10 bg-ink px-4 text-sm text-foam hover:bg-ink">📍 Gunakan lokasi saya</button>
+          <a href="https://www.google.com/maps/search/?api=1&amp;query=Jl.%20Tegalturi%2C%20depan%20Taman%20Budaya%20Giwangan%2C%20Yogyakarta" target="_blank" rel="noreferrer" class="foam-btn h-10 bg-foam px-4 text-sm">Buka Toko di Maps</a>
+        </div>
+        <div id="location-status" class="location-chip" hidden></div>
+        <textarea id="customer-notes" class="field min-h-16 resize-y" placeholder="Catatan (opsional)"></textarea>
+      </div>
+      <fieldset><legend class="mb-2 text-xs font-semibold uppercase tracking-wider text-ink-soft">Pembayaran</legend><div class="grid grid-cols-2 gap-2"><label id="pay-qris" class="rounded-2xl border border-berry bg-foam p-3 text-sm"><input type="radio" name="pay" value="qris" checked class="mr-2" /> QRIS</label><label id="pay-bca" class="rounded-2xl border border-transparent bg-foam/60 p-3 text-sm"><input type="radio" name="pay" value="bca" class="mr-2" /> BCA</label></div></fieldset>
+      <div id="qris-box" class="space-y-3"><img src="./qris.png" alt="QRIS Moova" class="w-full rounded-2xl" /><p class="helper-copy">Setelah membayar, pilih foto bukti supaya CS bisa verifikasi manual.</p></div>
+      <div id="bca-box" class="rounded-2xl bg-foam p-4 text-sm text-ink-soft" hidden><p>Transfer BCA <strong class="text-ink">4452309711</strong></p><p class="mt-1">MO*** DAF*** FAK***</p><p class="mt-2">Lalu kirim bukti transfer di WhatsApp untuk verifikasi manual.</p></div>
+      <div class="space-y-2"><label for="proof" class="flex items-center gap-2 font-display text-sm font-semibold">📎 Bukti pembayaran</label><input id="proof" type="file" accept="image/*" class="field p-2" /><div id="proof-preview" class="file-preview rounded-2xl bg-foam p-3"><img id="proof-image" alt="Pratinjau bukti pembayaran" /><button id="share-proof" type="button" class="foam-btn mt-2 h-10 w-full bg-ink px-4 text-sm text-foam hover:bg-ink">Bagikan bukti</button><p id="proof-status" class="helper-copy mt-2"></p></div></div>
+      <p id="drawer-error" class="text-sm text-berry-deep" hidden></p>
+      <button type="button" id="send-order" class="foam-btn h-12 w-full bg-wa px-4 text-wa-ink hover:bg-wa">💬 Kirim pesanan via WhatsApp</button>
+      <p class="helper-copy">Verifikasi pembayaran dilakukan manual melalui WhatsApp. Website ini tidak menyimpan atau mengirim file bukti ke server.</p>
+    </div>
+  </aside>
+
+  <script src="./app.js"></script>
+</body>
+</html>
