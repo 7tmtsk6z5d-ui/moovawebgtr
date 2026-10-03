@@ -1,0 +1,317 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Fredoka", "Nunito", system-ui, sans-serif;
+  --font-sans: "Nunito", "Fredoka", system-ui, sans-serif;
+
+  --color-cream: #fff4ea;
+  --color-cream-deep: #f3e0cf;
+  --color-foam: #fffdf8;
+  --color-ink: #3b1c22;
+  --color-ink-soft: #6d3d46;
+  --color-berry: #e85a78;
+  --color-berry-deep: #c44562;
+  --color-choco: #6e3e2e;
+  --color-choco-deep: #4a281c;
+  --color-matcha: #5f7d4a;
+  --color-matcha-deep: #3f5630;
+  --color-milk: #ead4a4;
+  --color-milk-deep: #8a6a3a;
+  --color-custom: #d4785a;
+  --color-wa: #128c4b;
+  --color-wa-ink: #f4fff8;
+
+  --radius-pack: 2.5rem;
+  --radius-card: 1.5rem;
+  --radius-pill: 999px;
+
+  --shadow-card: 0 18px 40px -24px rgb(59 28 34 / 0.35);
+  --shadow-float: 0 12px 32px -16px rgb(59 28 34 / 0.4);
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background: var(--color-cream);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+    font-family: var(--font-display);
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+}
+
+@layer components {
+  .stage {
+    --stage: var(--color-berry);
+    --stage-ink: var(--color-foam);
+    --stage-muted: rgb(255 253 248 / 0.78);
+    --stage-ghost: rgb(255 253 248 / 0.2);
+    --stage-deep: var(--color-berry-deep);
+    --stage-card: var(--color-foam);
+    --stage-card-ink: var(--color-ink);
+    background-color: var(--stage);
+    color: var(--stage-ink);
+    transition:
+      background-color 480ms cubic-bezier(0.22, 1, 0.36, 1),
+      color 480ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .stage[data-flavor="strawberry"] {
+    --stage: var(--color-berry);
+    --stage-deep: var(--color-berry-deep);
+    --stage-ink: var(--color-foam);
+    --stage-muted: rgb(255 253 248 / 0.78);
+    --stage-ghost: rgb(255 253 248 / 0.2);
+  }
+
+  .stage[data-flavor="coklat"] {
+    --stage: var(--color-choco);
+    --stage-deep: var(--color-choco-deep);
+    --stage-ink: var(--color-foam);
+    --stage-muted: rgb(255 253 248 / 0.78);
+    --stage-ghost: rgb(255 253 248 / 0.2);
+  }
+
+  .stage[data-flavor="matcha"] {
+    --stage: var(--color-matcha);
+    --stage-deep: var(--color-matcha-deep);
+    --stage-ink: var(--color-foam);
+    --stage-muted: rgb(255 253 248 / 0.8);
+    --stage-ghost: rgb(255 253 248 / 0.2);
+  }
+
+  .stage[data-flavor="murni"] {
+    --stage: var(--color-milk);
+    --stage-deep: var(--color-milk-deep);
+    --stage-ink: var(--color-ink);
+    --stage-muted: rgb(59 28 34 / 0.68);
+    --stage-ghost: rgb(59 28 34 / 0.1);
+  }
+
+  .stage[data-flavor="lainnya"] {
+    --stage: var(--color-custom);
+    --stage-deep: #b85c40;
+    --stage-ink: var(--color-foam);
+    --stage-muted: rgb(255 253 248 / 0.8);
+    --stage-ghost: rgb(255 253 248 / 0.2);
+  }
+
+  .pack-shell {
+    background: var(--color-cream);
+    padding: 10px;
+  }
+
+  @media (min-width: 768px) {
+    .pack-shell {
+      padding: 14px;
+    }
+  }
+
+  .pack-inner {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    min-height: calc(100dvh - 20px);
+    border-radius: 1.75rem;
+    box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.28);
+  }
+
+  @media (min-width: 768px) {
+    .pack-inner {
+      min-height: calc(100dvh - 28px);
+      border-radius: 2.35rem;
+    }
+  }
+
+  .wordmark {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(5.5rem, 26vw, 18rem);
+    line-height: 0.78;
+    letter-spacing: -0.07em;
+    color: var(--stage-ghost);
+    text-transform: uppercase;
+    user-select: none;
+    pointer-events: none;
+    white-space: nowrap;
+  }
+
+  .bottle-frame {
+    height: min(54vh, 32rem);
+    width: min(100%, 28rem);
+  }
+
+  @media (min-width: 1024px) {
+    .bottle-frame {
+      height: min(calc(100dvh - 220px), 40rem);
+      width: min(100%, 36rem);
+    }
+  }
+
+  .bottle-photo {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: 50% 46%;
+    filter: drop-shadow(0 22px 32px rgb(59 28 34 / 0.28));
+    mask-image: radial-gradient(ellipse 82% 86% at 50% 48%, #000 66%, transparent 94%);
+    animation: bottle-float 5.6s ease-in-out infinite;
+  }
+
+  .promo-card {
+    background: var(--color-foam);
+    color: var(--color-ink);
+    border-radius: 1.35rem;
+    box-shadow: var(--shadow-card);
+  }
+
+  .foam-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    background: var(--color-foam);
+    color: var(--color-ink);
+    border-radius: var(--radius-pill);
+    font-family: var(--font-display);
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    box-shadow: var(--shadow-float);
+    transition:
+      transform 180ms cubic-bezier(0.22, 1, 0.36, 1),
+      box-shadow 180ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .foam-btn:hover {
+    transform: translateY(-1px);
+  }
+
+  .foam-btn:active {
+    transform: scale(0.98);
+  }
+
+  .ghost-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    border: 1.5px solid color-mix(in oklab, var(--stage-ink) 28%, transparent);
+    color: var(--stage-ink);
+    background: color-mix(in oklab, var(--stage-ink) 8%, transparent);
+    transition: background-color 160ms ease;
+  }
+
+  .ghost-btn:hover {
+    background: color-mix(in oklab, var(--stage-ink) 16%, transparent);
+  }
+
+  .ticker {
+    overflow: hidden;
+    border-block: 1px solid color-mix(in oklab, var(--stage-ink) 16%, transparent);
+    font-family: var(--font-display);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-size: 0.72rem;
+  }
+
+  .ticker-track {
+    display: flex;
+    width: max-content;
+    animation: ticker 28s linear infinite;
+  }
+
+  .field {
+    width: 100%;
+    border-radius: 1rem;
+    border: 1px solid var(--color-cream-deep);
+    background: var(--color-foam);
+    color: var(--color-ink);
+    padding: 0.8rem 0.95rem;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 150ms ease, box-shadow 150ms ease;
+  }
+
+  .field:focus {
+    border-color: var(--color-berry);
+    box-shadow: 0 0 0 3px rgb(232 90 120 / 0.2);
+  }
+
+  .shot {
+    aspect-ratio: 4 / 5;
+  }
+
+  .stepper {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.15rem;
+    border-radius: 999px;
+    background: color-mix(in oklab, var(--stage-ink) 10%, transparent);
+    padding: 0.15rem;
+  }
+}
+
+@keyframes bottle-float {
+  0%,
+  100% {
+    transform: scale(1.16) translateY(0);
+  }
+  50% {
+    transform: scale(1.16) translateY(-12px);
+  }
+}
+
+@keyframes ticker {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.rise-in {
+  animation: rise-in 420ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .bottle-photo,
+  .ticker-track,
+  .rise-in {
+    animation: none;
+  }
+}
